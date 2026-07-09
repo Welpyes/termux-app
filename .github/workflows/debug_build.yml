@@ -8,6 +8,17 @@ on:
   pull_request:
     branches:
       - master
+  workflow_dispatch:
+    inputs:
+      BRANCH:
+        description: build branch
+        required: true
+        default: sixel4
+      SILENT_BUILD:
+        description: Silent build logs
+        required: false
+        default: false
+        type: boolean
 
 jobs:
   build:
